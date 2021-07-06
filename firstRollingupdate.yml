@@ -1,12 +1,12 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nginx-test
+  name: webserver
 spec:
-  replicas: 10
+  replicas: 3
   selector:
     matchLabels:
-      service: http-server
+      service: nginxweb
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -16,11 +16,11 @@ spec:
   template:
     metadata:
       labels:
-        service: http-server
+        service: nginxweb
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.10.2
+      - name: web
+        image: vipin2411/nginx-alpine:v1
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
