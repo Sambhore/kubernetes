@@ -7,5 +7,5 @@ spec:
     app: nginxweb
   ports:
     - protocol: TCP
-      ports: 80
+      port: 80
   type: LoadBalancer
