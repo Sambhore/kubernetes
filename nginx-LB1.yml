@@ -6,7 +6,7 @@ metadata:
     app: nginxweb
     type: production
     ver: v1
-  Spec:
+  spec:
     containers:
     - name: web
       image: vipin2411/nginx-alpine:v1
