@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simplewebsite
+  labels:
+    app: simple-web
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simple-web
+  template:
+    metadata:
+      labels:
+        app: simple-web
+    spec:
+      containers:
+      - name: simplewebsiteQ
+        image: yeasy/simple-web:latest
+        ports:
+        - containerPort: 8081
